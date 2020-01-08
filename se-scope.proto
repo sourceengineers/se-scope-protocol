@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package PB;
+
+enum Var_Type {
+    SE_INT8 = 0;
+    SE_INT16 = 1;
+    SE_INT32 = 2;
+    SE_UINT8 = 3;
+    SE_UINT16 = 4;
+    SE_UINT32 = 5;
+    SE_FLOAT = 6;
+}
+
+// The values of the modes match with those in ScopeTypes. This way they are faster to parse.
+enum Trigger_Mode {
+    NORMAL = 0;
+    CONTINUOUS = 1;
+    ONE_SHOT = 2;
+}
+
+message SC_Trigger {
+    uint32 cl_id = 1;
+    uint32 cl_data_ind = 2;
+    Trigger_Mode mode = 3;
+}
+
+message SC_Channel {
+    repeated float data = 1;
+    uint32 id = 2;
+}
+
+message SC_Data {
+    repeated SC_Channel channels = 1;
+    repeated fixed32 timestamps = 2;
+    uint32 t_inc = 3;
+    SC_Trigger trigger = 4;
+}
+
+message AddressConfig {
+    uint32 cl_id = 1;
+    uint32 address = 2;
+    Var_Type type = 3;
+}
+
+message CF_Address {
+    repeated AddressConfig addresses = 1;
+}
+
+message RunningConfig {
+    uint32 cl_id = 1;
+    bool new_state = 2;
+}
+
+message CF_Running {
+    repeated RunningConfig running = 1;
+}
+
+message CF_Trigger {
+    uint32 cl_id = 1;
+    Trigger_Mode mode = 2;
+    float level = 3;
+    bool edge = 4;
+}
+
+message CF_TInc {
+    uint32 t_inc = 1;
+}
+
+message EV_Poll {
+    uint32 timestamp = 1;
+}
