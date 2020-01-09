@@ -48,7 +48,7 @@ message SC_Channel_Configuration {
     string name = 2;
     Var_Type type = 3;
 }
-message Announce {
+message SC_Announce {
     repeated SC_Channel_Configuration channels = 1;
     uint32 max_channels = 2;
     float timebase = 3;
