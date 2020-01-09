@@ -1,4 +1,2 @@
-
-
-// Announce.version max_size:5
-// ScAnnounceAddress.name max_size:40
+PB.SC_Channel_Configuration.name max_size:30
+PB.Announce.version max_size:5

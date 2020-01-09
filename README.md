@@ -22,6 +22,6 @@ protoc \
 
 # Build for python
 The test vectors for protobuf are generated with python. To build the python definitions run: 
-´´´bash
+```bash
 protoc -I=. --python_out=../../test/Serialisation/Protobuf/ ./se-scope.proto
-´´´
+```
