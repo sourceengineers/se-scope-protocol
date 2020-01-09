@@ -47,6 +47,7 @@ message SC_Channel_Configuration {
     uint32 id = 1;
     string name = 2;
     Var_Type type = 3;
+    uint32 address = 4;
 }
 message SC_Announce {
     repeated SC_Channel_Configuration channels = 1;
