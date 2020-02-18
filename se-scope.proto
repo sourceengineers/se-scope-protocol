@@ -56,8 +56,20 @@ message SC_Announce {
     string version = 4;
 }
 
+// sc_log
+enum LOG_SEVERITY {
+    SE_CRITICAL = 0;
+    SE_WARNING = 1;
+    SE_MESSAGE = 2;
+}
+
+message SC_Log {
+    LOG_SEVERITY severity = 1;
+    string message = 2;
+    uint32 timestamp = 3;
+}
 //**********************************************************************************************************************
-// Target -> Host
+// Host -> Target
 //**********************************************************************************************************************
 // cf_addr
 message AddressConfig {
