@@ -37,7 +37,7 @@ message SC_Channel {
 }
 message SC_Data {
     repeated SC_Channel channels = 1;
-    repeated fixed32 timestamps = 2;
+    uint32 timestamp = 2;
     uint32 t_inc = 3;
     SC_Trigger trigger = 4;
 }
@@ -56,20 +56,8 @@ message SC_Announce {
     string version = 4;
 }
 
-// sc_log
-enum LOG_SEVERITY {
-    SE_CRITICAL = 0;
-    SE_WARNING = 1;
-    SE_MESSAGE = 2;
-}
-
-message SC_Log {
-    LOG_SEVERITY severity = 1;
-    string message = 2;
-    uint32 timestamp = 3;
-}
 //**********************************************************************************************************************
-// Host -> Target
+// Target -> Host
 //**********************************************************************************************************************
 // cf_addr
 message AddressConfig {
