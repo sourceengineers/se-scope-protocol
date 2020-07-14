@@ -16,6 +16,13 @@ enum Var_Type {
     SE_FLOAT = 6;
 }
 
+enum Log_Severity{
+  INFO = 0;
+  DEBUG = 1;
+  WARNING = 2;
+  ERROR = 3;
+}
+
 enum Trigger_Mode {
     NORMAL = 0;
     CONTINUOUS = 1;
@@ -25,6 +32,14 @@ enum Trigger_Mode {
 //**********************************************************************************************************************
 // Target -> Host
 //**********************************************************************************************************************
+
+// SC_Log
+message SC_Log {
+    Log_Severity severity = 1;
+    string message = 2;
+    uint32 timestamp = 3;
+}
+
 // sc_data
 message SC_Trigger {
     uint32 cl_id = 1;
