@@ -52,7 +52,7 @@ message SC_Channel {
 }
 message SC_Data {
     repeated SC_Channel channels = 1;
-    uint32 timestamp = 2;
+    repeated fixed32 timestamps = 2;
     uint32 t_inc = 3;
     SC_Trigger trigger = 4;
 }
