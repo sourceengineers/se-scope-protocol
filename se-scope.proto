@@ -62,7 +62,7 @@ message SC_Channel_Configuration {
     uint32 id = 1;
     string name = 2;
     Var_Type type = 3;
-    uint32 address = 4;
+    uint32 address = 4; // TODO: Change the address to be a 64 bit address
 }
 message SC_Announce {
     repeated SC_Channel_Configuration channels = 1;
@@ -77,7 +77,7 @@ message SC_Announce {
 // cf_addr
 message AddressConfig {
     uint32 cl_id = 1;
-    uint32 address = 2;
+    uint32 address = 2; // TODO: Change the address to be a 64 bit address
     Var_Type type = 3;
 }
 message CF_Address {
